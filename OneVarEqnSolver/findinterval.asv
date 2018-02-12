@@ -7,24 +7,27 @@ b = x0;
 dx = 0.001;
 i = 1;
 
-fprintf('\t  a \t \t  b \t \t  f(a) \t \t  f(b) \n');
+fprintf('\t a \t  b \t f(a) \t f(b) \t ',i,a,b,c,d);
 
 while ((f(a)*f(b)) >= 0);
     a = a - dx;
     if ((f(a)*f(b)) < 0)
-        fprintf('%d \t % 1.2e \t % 1.2e \t % 1.2e \t % 1.2e \n',i,a,b,f(a),f(b));
+        fprintf('%d \t % 1.2e \t % 1.2e \t % 1.2e \t % 1.2e \n',i,a,b,c,d);
         return
     end
     
     b = b + dx;
     if ((f(a)*f(b)) < 0)
-        fprintf('%d \t % 1.2e \t % 1.2e \t % 1.2e \t % 1.2e \n',i,a,b,f(a),f(b));
+        fprintf('%d \t % 1.2e \t % 1.2e \t % 1.2e \t % 1.2e \n',i,a,b,c,d);
         return
     end
     
     dx = dx*2;
     
-    fprintf('%d \t % 1.2e \t % 1.2e \t % 1.2e \t % 1.2e \n',i,a,b,f(a),f(b));
+    c = f(a);
+    d = f(b);
+    
+    fprintf('%d \t % 1.2e \t % 1.2e \t % 1.2e \t %1.2e \n',i,a,b,c,d);
     i = i + 1;
     
 end
