@@ -7,7 +7,7 @@ b = x0;
 dx = 0.001;
 i = 1;
 
-fprintf('\t  a \t \t  b \t \t  f(a) \t \t  f(b) \n');
+fprintf('Finding Interval \n \t  a \t \t  b \t \t  f(a) \t \t  f(b) \n');
 
 while ((f(a)*f(b)) >= 0);
     a = a - dx;
