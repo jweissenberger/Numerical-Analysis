@@ -1,6 +1,10 @@
 function [a , b] = findinterval( f, x0 )
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+%findinterval finda an interval around x0 such that f(a) and f(b) have
+%different signs
+%   Inputs: f: a function
+%          x0: some point
+%   Ouputs: 
+%     [a , b]: the interval around x0
 
 a = x0;
 b = x0;
@@ -9,6 +13,7 @@ i = 1;
 
 fprintf('Finding Interval \n \t  a \t \t  b \t \t  f(a) \t \t  f(b) \n');
 
+% loops outward from the point x0 until f(a) and f(b) have the same sign
 while ((f(a)*f(b)) >= 0);
     a = a - dx;
     if ((f(a)*f(b)) < 0)
@@ -28,9 +33,6 @@ while ((f(a)*f(b)) >= 0);
     i = i + 1;
     
 end
-
-f(a)
-f(b)
 
 
 end

@@ -1,12 +1,20 @@
 function [ p ] = newbis( f, df, a, b )
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
+%newbis finds the zero of a function f
+%   newbis finds the zero of a function using Newton's method and bisection
+%   when Newton's fails
+%
+%   Inputs: f: a function 
+%          df: the derivative of f
+%       [a,b]: the interval to find the zero on
+%   Outputs: 
+%           p: the zero
 
 p = a;
-tol = 100*eps;
-i = 1;
+tol = 100*eps; %tolerance
+i = 1; %iterator
 
-fprintf('\n Findind Zero \n \t  x \t \t  f(x) \t \t  Method\n');
+fprintf('\n Findind Zero \n \t  x \t \t  f(x) \t \t Method\n');
+%iterate until the value of the zero is smaller than the tolerance
 while abs(f(p)) > tol;
     % Newton Step
     t = p - (f(p)/df(p));
@@ -26,7 +34,6 @@ while abs(f(p)) > tol;
     else
         b = p;
     end
-    
     
     
     i = i +1;
