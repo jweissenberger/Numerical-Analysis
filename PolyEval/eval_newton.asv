@@ -1,0 +1,17 @@
+function [ f ] = eval_newton(C, X)
+%eval_newton
+
+[~,n] = size(C);
+
+f = @(x) C(1,1);
+g = @(x) 1;
+
+
+for i = 2:n, 
+    g = @(x) g(x)*(x-X(1,i-1));
+    f = @(x) f(x)+C(1,i)*g(x);
+end
+
+
+end
+
