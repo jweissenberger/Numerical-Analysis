@@ -1,4 +1,5 @@
 function [ Yq ] = eval_newton(C, X, Xq)
+%Jack Weissenberger February 2018
 %eval_newton evaluates an interpolated function in the newton basis 
 %***NOTE*** all vectors must be row vectors
 %   Inputs:   C: a vector of coefficients in the Newton basis, should be

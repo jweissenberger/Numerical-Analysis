@@ -1,4 +1,5 @@
 function [ C ] = interp_newton( X, Y )
+%Jack Weissenberger February 2018
 %interp_newton uses Newton's Divided differences formula to calculate the
 %coefficients of the interpolating polynominal
 %**NOTE** X and Y must be row vectors vectors 
