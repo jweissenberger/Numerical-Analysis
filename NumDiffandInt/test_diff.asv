@@ -4,10 +4,10 @@
 df = @(x)(-50*x + exp(x))/(25*x^2+exp(x) + 1)^2;
 f = @(x) 1/(1 + exp(x) + 25*x^2);
 
-fprintf('\n Maximum Absolute Error \n n\t\t\t Forward Difference \tCentral Difference\n');
+fprintf('\n Maximum Absolute Error \n n  \t\tForward Difference \t  Central Difference\n');
 n = 10;
 
-while n <= 1e6,
+while n <= 1e5,
     h = 2/n;
     x = linspace(-1, 1, n);
     y = 1./(1 + exp(x) + 25.*x.^2);
@@ -36,14 +36,7 @@ while n <= 1e6,
     maxForwardE = max(forwardE);
     maxCentralE = max(centralE);
 
-    fprintf(' %1.0e \t\t% 1.2e\t \t \t   % 1.2e \n', n, maxForwardE, maxCentralE);
+    fprintf(' %1.0e \t\t% 1.2e\t \t \t % 1.2e \n', n, maxForwardE, maxCentralE);
 
-    if n == 1e6,
-        hold on
-        plot(x, forwardE, '*')
-        plot(x, centralE, 'o')
-        plot(x, actual, '.')
-    end
-    
     n = n*10;
 end
