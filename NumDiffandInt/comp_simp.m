@@ -1,5 +1,5 @@
 function [ int ] = comp_simp( feval)
-%UNTITLED3 Summary of this function goes here
+%Composite simpson
 %   feval: vector of function evaluations
 %   h: step size, difference between grid points
 
@@ -10,20 +10,24 @@ b = 1;
 [~, m] = size(feval);
 h = (b-a)/m;
 
+%composite simpson if the interval is odd
 if mod(m, 2) == 1,
 r = repmat([2 4], 1, floor(m/2));
 r(1,1) = 1;
 r(1, m) = 1;
 int = (h/3)*r*feval';
-end
 
 
-if mod(m,2) == 0,
+%composite simpson is even and then use the trapezoidal rule if not
+else
     r = repmat([2 4], 1, floor((m-1)/2));
     r(1,1) = 1;
     r(1, m-1) = 1;
-    trap = 
-    int = (h/3)*r*feval(1,1:m-1)';
+    last = ((feval(end)+feval(end-1))/2)*h;
+    %last = (h/3)*(feval(end-3)+4*feval(end-2)+feval(end));
+    %this commented out simpsons rule turns out to be less accurate than 
+    %using the trap rule
+    int = (h/3)*r*feval(1,1:m-1)'+last;
 end
 %repmat([4 2], 1,3)
 %needs to end in 4's 
