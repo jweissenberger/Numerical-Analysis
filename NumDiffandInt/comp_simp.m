@@ -22,7 +22,8 @@ if mod(m,2) == 0,
     r = repmat([2 4], 1, floor((m-1)/2));
     r(1,1) = 1;
     r(1, m-1) = 1;
-    int = (h/3)*r*feval(1,m-1)';
+    trap = 
+    int = (h/3)*r*feval(1,1:m-1)';
 end
 %repmat([4 2], 1,3)
 %needs to end in 4's 

@@ -7,7 +7,7 @@ f = @(x) 1/(1 + exp(x) + 25*x^2);
 fprintf('\n Maximum Absolute Error \n n\t\t\t Forward Difference \tCentral Difference\n');
 n = 50;
 
-%while n <= 1e8,
+while n <= 1e6,
     h = 2/n;
     x = linspace(-1, 1, n);
     y = 1./(1 + exp(x) + 25.*x.^2);
@@ -19,8 +19,9 @@ n = 50;
 
     %central difference
     central = gradient(y)/h;
-    central(end) = (-;
-    %central(1) = (1/(2*h)) * (-3*f(-1)+ 4(;
+    central(end) = [(3)*y(end) - 4*y(end - 1) + y(end - 2)]/(2*h);
+    central(1) = [(-3)*y(1) + 4*y(2) - y(3)]/(2*h);
+      
 
     %actual
     actual = df(x);
@@ -50,4 +51,4 @@ n = 50;
     end
     
     n = n*10;
-%end
+end
