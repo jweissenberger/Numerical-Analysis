@@ -13,7 +13,7 @@ fprintf('\n Integral Approximation Error \n n\t\t\t Composite Simpson \t\tCubic 
 while n < 10,
 %composite simpson
 x = linspace(-1, 1, n);
-cs = comp_simp(f(a));
+cs = comp_simp(f(x));
 coms_error = abs(actual - cs);
 
 %cubic spline integral interpolation

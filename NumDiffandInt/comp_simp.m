@@ -26,7 +26,7 @@ else
     last = ((feval(end)+feval(end-1))/2)*h;
     %last = (h/3)*(feval(end-3)+4*feval(end-2)+feval(end));
     %this commented out simpsons rule turns out to be less accurate than 
-    %using the trap rule
+    %using the trap rule when I used it on the last three points
     int = (h/3)*r*feval(1,1:m-1)'+last;
 end
 %repmat([4 2], 1,3)
