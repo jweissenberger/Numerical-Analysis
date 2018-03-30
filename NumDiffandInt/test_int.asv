@@ -1,7 +1,7 @@
 %Jack Weissenberger
 % test_int
 % this script compares the integral approximations of composite simpson
-% and cubic spline for n = 3, 5, 7 and 9 intervals
+% and cubic spline for n = 3
 
 f = @(x) 1./(1 + exp(x) + 25.*x.^2);
 n = 3;
