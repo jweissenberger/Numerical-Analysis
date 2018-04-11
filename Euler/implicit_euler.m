@@ -9,9 +9,10 @@ y = zeros(1, n);
 y(1) = ya;
 
 for i = 1:n,
-    t(i+1)=a+i*h;
-    ynew=y(i)+h*(f(t(i),y(i)));
-    y(i+1)=y(i)+h*f(t(i+1),ynew);
+   t(i+1) = a + h*i;
+   %we use forward euler to make our first guess in fzero
+   %it creates another function call but gives us a much better guess
+   y(i+1) = fzero(@(z) y(i) + h * f(t(i+1), z) -z , y(i)+h*f(t(i), y(i)));
 end
 
 
