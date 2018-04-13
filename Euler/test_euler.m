@@ -20,5 +20,10 @@ legend('Implicit','Explicit','Actual')
 hold off
 
 n
-implicitError = max(abs(actual(t)- y))
-explicitError = max(abs(actual(j)- k))
+realAns = actual(t);
+implicitError = max(abs(realAns- y))
+explicitError = max(abs(realAns- k))
+[o,p] = ode23(f, [a b], ya);
+ode23Error = max(abs(actual(o)- p))
+%need to find # of function evaluations 
+%size(o)
