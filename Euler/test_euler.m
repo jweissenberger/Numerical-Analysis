@@ -7,7 +7,7 @@ a = 0;
 b = pi;
 ya = 0;
 
-n = 1e4;
+n = 1e3;
 
 [t, y] = implicit_euler(f,a,b,ya,n);
 [j, k] = explicit_euler(f,a,b,ya,n);
@@ -20,5 +20,5 @@ legend('Implicit','Explicit','Actual')
 hold off
 
 n
-implicitError = sum(abs(actual(t)- y))
-explicitError = sum(abs(actual(j)- k))
+implicitError = max(abs(actual(t)- y))
+explicitError = max(abs(actual(j)- k))
