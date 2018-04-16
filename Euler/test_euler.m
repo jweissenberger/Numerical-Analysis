@@ -7,7 +7,7 @@ a = 0;
 b = pi;
 ya = 0;
 
-n = 1e3;
+n = 1e4;
 
 [t, y] = implicit_euler(f,a,b,ya,n);
 [j, k] = explicit_euler(f,a,b,ya,n);
