@@ -7,13 +7,13 @@ ya = 0;
 for i = 1:4,
     n(i) = 10^(i);
 
-    %[t, y] = implicit_euler(f,a,b,ya,n(i));
-    [j, k] = explicit_euler(f,a,b,ya,n(i));
+    [t, y] = implicit_euler(f,a,b,ya,n(i));
+    %[j, k] = explicit_euler(f,a,b,ya,n(i));
 
 
-    realAns = actual(j);
-    %implicitError(i) = max(abs(realAns- y));
-    explicitError(i) = max(abs(realAns - k));
+    realAns = actual(t);
+    implicitError(i) = max(abs(realAns- y));
+    %explicitError(i) = max(abs(realAns - k));
     %[o,p] = ode23(f, [a b], ya);
     %ode23Error = max(abs(actual(o)- p))
     %need to find # of function evaluations 
@@ -23,5 +23,5 @@ end
 
 
 
-loglog(explicitError, n)
+loglog(implicitError, n)
 %set(gca, 'YScale', 'log')
