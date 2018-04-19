@@ -4,24 +4,9 @@ a = 0;
 b = pi;
 ya = 0;
 
-for i = 1:4,
-    n(i) = 10^(i);
+n = 100000;
 
-    [t, y] = implicit_euler(f,a,b,ya,n(i));
-    %[j, k] = explicit_euler(f,a,b,ya,n(i));
+[t, y] = explicit_euler(f,a,b,ya,n);
 
-
-    realAns = actual(t);
-    implicitError(i) = max(abs(realAns- y));
-    %explicitError(i) = max(abs(realAns - k));
-    %[o,p] = ode23(f, [a b], ya);
-    %ode23Error = max(abs(actual(o)- p))
-    %need to find # of function evaluations 
-    %size(o)
-
-end
-
-
-
-loglog(implicitError, n)
-%set(gca, 'YScale', 'log')
+realAns = actual(t);
+explicitError = max(abs(realAns- y))
