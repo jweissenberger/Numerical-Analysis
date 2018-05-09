@@ -39,7 +39,7 @@ end
 %then just slap trapezoidal rule onto that guy for the last point
 % if m is not odd 
 % and use the same rule 
-%}
+%
 
 end
 

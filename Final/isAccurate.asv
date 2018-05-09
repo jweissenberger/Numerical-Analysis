@@ -1,0 +1,18 @@
+function [ acc ] = isAccurate( f, x, y, tol )
+%UNTITLED3 Summary of this function goes here
+%   Detailed explanation goes here
+
+[~, m] = size(x);
+acc = zeros(1, m);
+
+for i = 1: m-1,
+    error = abs( f((x(1, i) + x(1, i+1))/2 ) - (f(x(1,i)) +  (f(x(1,i+1))+h ))/2 );
+    acc(1, i) = error;
+    if error > tol;
+        disp('Error greater than tolerance')
+    end
+end
+
+disp('Accuracy fits tolerance');
+end
+
