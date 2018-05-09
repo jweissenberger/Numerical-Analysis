@@ -1,9 +1,10 @@
 function [ x, y ] = midPolyI( f, a, b, tol )
-%UNTITLED2 Summary of this function goes here
 %   inputs: f: function that you want a set of points for
 %           a: sarting point
 %           b: end point
-%         tol: tolerance that error of the midpoint must meet  
+%         tol: tolerance that error of the midpoint must meet 
+%   outputs:x: vector of x values
+% 	        y: function evaluations at the points x
 
 %step size
 h = 0.1;
