@@ -1,6 +1,6 @@
 function [ acc ] = isAccurate( f, x, y, tol )
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+%isAccurate
+%   tests that each of the points fits the error condition 
 
 [~, m] = size(x);
 acc = zeros(1, m);
