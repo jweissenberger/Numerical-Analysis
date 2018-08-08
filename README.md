@@ -2,7 +2,7 @@
 
 Euler: Initial Value problems for Ordinary Differential Equations
 
-Fibonacii: simple code that uses bisection to get fibonacii values
+Fibonacci: simple code that uses bisection to get Fibonacci values
 
 Final: code from the final take home test, things like using Newton's methodto solve initial value problems and Midpoint Polynomial Interpolation
 
