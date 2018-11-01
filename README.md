@@ -4,7 +4,7 @@ Euler: Initial Value problems for Ordinary Differential Equations
 
 Fibonacci: simple code that uses bisection to get Fibonacci values
 
-Final: code from the final take home test, things like using Newton's methodto solve initial value problems and Midpoint Polynomial Interpolation
+Final: code from the final take home test, things like using Newton's method to solve initial value problems and Midpoint Polynomial Interpolation
 
 Interpgui: Demonstrates interpolation by a piecewise linear interpolant, a polynomial spline, and a shape preserving Hermite Cubic (most of the code was already provided)
 
